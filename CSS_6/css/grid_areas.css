@@ -1,0 +1,67 @@
+html{
+  font-size: 62.5%; /* equivale a 10px */
+}
+
+/* Propiedades para el contenedor */
+
+.contenedor{
+  max-width: 120rem; /* 1200px */
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(4,auto);
+  grid-template-areas: 
+  /* Por cada fila le decimos que queremos que vaya (hizo un dibujo en paint de las áreas de cada sección, según ella tenía 4 filas y 3 columnas) */
+  "header header header"
+  "main main sidebar"
+  "bloque-1 bloque-2 sidebar"
+  "footer footer footer";
+  margin-right: auto;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+/* A cada área mencionada le confirmamos su nombre y le definimos sus propiedades
+Accedemos al contenedor, a la clase y decimos 'esta área se llama header' */
+
+.contenedor .header{
+  grid-area: header;
+  background-color: #12203e;
+  color:white;
+  height: 10vh;
+}
+
+.contenedor .main {
+  grid-area: main;
+  background-color: bisque;
+  color: black;
+  height: 20vh;
+}
+
+.contenedor .sidebar {
+  grid-area: sidebar;
+  background-color: orangered;
+  color: black;
+  /* no le agregamos altura porque va a depender de la altura del contenido principal y de los bloques */
+}
+
+.contenedor .bloque-1 {
+  grid-area: bloque-1;
+  background-color: blueviolet;
+  color: black;
+  height: 20vh;
+  height: 10vh;
+}
+
+.contenedor .bloque-2 {
+  grid-area: bloque-2;
+  background-color: aqua;
+  color: black;
+  height: 10vh;
+}
+
+.contenedor .footer {
+  grid-area: footer;
+  background-color: #12203e;
+  color: white;
+  height: 20vh;
+}
